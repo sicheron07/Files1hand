@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080d1b">
+    <meta name="description" content="Files1hand by Sicheron — simple tools to compress, merge and convert your documents.">
+
+    <title>Files1hand — Your Files. Under Your Control.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+    <a href="#home" class="logo">Files<span>1</span>hand</a>
+<div class="brand">
+    <span>by Sicheron</span>
+</div>
+</header>
+
+
+    <!-- HOMEPAGE -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="badge">
+                SIMPLE TOOLS. COMPLETE CONTROL.
+            </div>
+
+            <h1>
+                Your files.<br>
+                <span>Under your control.</span>
+            </h1>
+
+            <p class="description">
+                Simple, powerful online tools to merge, compress and
+                convert documents. Everything you need, in one place.
+            </p>
+
+            <a href="#tools" class="primary-button">
+                Explore Tools <span aria-hidden="true">↓</span>
+            </a>
+
+        </section>
+
+
+        <!-- TOOLS -->
+        <section class="tools-section" id="tools">
+
+            <div class="section-heading">
+                <span class="section-label">OUR TOOLS</span>
+
+                <h2>What do you want to do?</h2>
+
+                <p>
+                    Choose a tool to get started with your files.
+                </p>
+            </div>
+
+
+            <div class="tools-grid">
+
+                <!-- COMPRESS PDF -->
+                <button class="tool-card" type="button"
+                        data-scroll-target="compress">
+
+                    <div class="tool-icon" aria-hidden="true">
+                        ⇣
+                    </div>
+
+                    <h3>Compress PDF</h3>
+
+                    <p>
+                        Reduce PDF file size to make documents
+                        easier to store and share.
+                    </p>
+
+                    <span class="card-link">
+                        Open tool <span aria-hidden="true">→</span>
+                    </span>
+
+                </button>
+
+
+                <!-- MERGE PDF -->
+                <button class="tool-card" type="button"
+                        data-scroll-target="merge">
+
+                    <div class="tool-icon" aria-hidden="true">
+                        ⊕
+                    </div>
+
+                    <h3>Merge PDF</h3>
+
+                    <p>
+                        Combine multiple PDF documents into
+                        one organised file.
+                    </p>
+
+                    <span class="card-link">
+                        Open tool <span aria-hidden="true">→</span>
+                    </span>
+
+                </button>
+
+
+                <!-- CONVERT FILES -->
+                <button class="tool-card" type="button"
+                        data-scroll-target="convert">
+
+                    <div class="tool-icon" aria-hidden="true">
+                        ⇄
+                    </div>
+
+                    <h3>Convert Files</h3>
+
+                    <p>
+                        Convert documents and images between
+                        supported file formats.
+                    </p>
+
+                    <span class="card-link">
+                        Open tool <span aria-hidden="true">→</span>
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPRESS PDF SECTION -->
+        <section class="workspace-section" id="compress">
+
+            <div class="section-heading">
+                <span class="section-label">PDF TOOL</span>
+                <h2>Compress PDF</h2>
+
+                <p>
+                    Reduce the size of your PDF documents.
+                </p>
+            </div>
+
+            <div class="tool-workspace" id="compressWorkspace">
+
+                <div class="upload-icon" aria-hidden="true">⇣</div>
+
+                <h3>Make your PDF smaller</h3>
+
+                <p>
+                    Select a PDF file from your device to get started.
+                </p>
+
+                <input
+                    type="file"
+                    id="compressFile"
+                    accept=".pdf,application/pdf"
+                >
+
+                <label for="compressionLevel">Compression level</label>
+
+                <select id="compressionLevel">
+                    <option value="balanced">Balanced</option>
+                    <option value="maximum">Maximum</option>
+                </select>
+
+                <button class="primary-button" id="compressButton"
+                        type="button">
+                    Compress PDF
+                </button>
+
+                <p class="status-message" id="compressStatus"
+                   role="status" aria-live="polite"></p>
+
+                <a href="#" id="compressDownload"
+                   class="download-button" hidden>
+                    Download Compressed PDF
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- MERGE PDF SECTION -->
+        <section class="workspace-section" id="merge">
+
+            <div class="section-heading">
+                <span class="section-label">PDF TOOL</span>
+                <h2>Merge PDF</h2>
+
+                <p>
+                    Bring multiple PDF files together into one document.
+                </p>
+            </div>
+
+            <div class="tool-workspace" id="mergeWorkspace">
+
+                <div class="upload-icon" aria-hidden="true">⊕</div>
+
+                <h3>Combine your PDF files</h3>
+
+                <p>
+                    Select two or more PDFs to merge.
+                </p>
+
+                <input
+                    type="file"
+                    id="mergeFiles"
+                    accept=".pdf,application/pdf"
+                    multiple
+                >
+
+                <div id="mergeFileList" class="file-list"></div>
+
+                <button class="primary-button" id="mergeButton"
+                        type="button">
+                    Merge PDFs
+                </button>
+
+                <p class="status-message" id="mergeStatus"
+                   role="status" aria-live="polite"></p>
+
+                <a href="#" id="mergeDownload"
+                   class="download-button" hidden>
+                    Download Merged PDF
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILE CONVERTER SECTION -->
+        <section class="workspace-section" id="convert">
+
+            <div class="section-heading">
+                <span class="section-label">CONVERSION TOOLS</span>
+                <h2>Convert Files</h2>
+
+                <p>
+                    Choose a conversion tool below.
+                </p>
+            </div>
+
+
+            <div class="converter-grid">
+
+                <!-- IMAGES TO PDF -->
+                <div class="converter-card">
+
+                    <h3>Images to PDF</h3>
+
+                    <p>Combine images into a PDF document.</p>
+
+                    <input
+                        type="file"
+                        id="imagesToPdfFiles"
+                        accept="image/jpeg,image/png,image/webp"
+                        multiple
+                    >
+
+                    <button id="imagesToPdfButton" type="button">
+                        Convert to PDF
+                    </button>
+
+                    <p class="status-message" id="imagesToPdfStatus"
+                       role="status" aria-live="polite"></p>
+
+                    <a href="#" id="imagesToPdfDownload"
+                       class="download-button" hidden>
+                        Download PDF
+                    </a>
+
+                </div>
+
+
+                <!-- PDF TO IMAGES -->
+                <div class="converter-card">
+
+                    <h3>PDF to JPG</h3>
+
+                    <p>Convert PDF pages into JPG images.</p>
+
+                    <input
+                        type="file"
+                        id="pdfToImagesFile"
+                        accept=".pdf,application/pdf"
+                    >
+
+                    <button id="pdfToImagesButton" type="button">
+                        Convert to JPG
+                    </button>
+
+                    <p class="status-message" id="pdfToImagesStatus"
+                       role="status" aria-live="polite"></p>
+
+                    <a href="#" id="pdfImagesZipDownload"
+                       class="download-button" hidden>
+                        Download All (ZIP)
+                    </a>
+
+                    <details id="pdfImagesDetails" hidden>
+                        <summary>Individual page downloads</summary>
+                        <div id="pdfImagesDownloads"></div>
+                    </details>
+
+                </div>
+
+
+                <!-- WORD TO PDF -->
+                <div class="converter-card">
+
+                    <h3>Word to PDF</h3>
+
+                    <p>Convert supported Word documents to PDF.</p>
+
+                    <input
+                        type="file"
+                        id="wordToPdfFile"
+                        accept=".docx"
+                    >
+
+                    <button id="wordToPdfButton" type="button">
+                        Convert to PDF
+                    </button>
+
+                    <p class="status-message" id="wordToPdfStatus"
+                       role="status" aria-live="polite"></p>
+
+                    <a href="#" id="wordToPdfDownload"
+                       class="download-button" hidden>
+                        Download PDF
+                    </a>
+
+                </div>
+
+
+                <!-- PDF TO WORD -->
+                <div class="converter-card">
+
+                    <h3>PDF to Word</h3>
+
+                    <p>Extract supported PDF text into a Word document.</p>
+
+                    <input
+                        type="file"
+                        id="pdfToWordFile"
+                        accept=".pdf,application/pdf"
+                    >
+
+                    <button id="pdfToWordButton" type="button">
+                        Convert to Word
+                    </button>
+
+                    <p class="status-message" id="pdfToWordStatus"
+                       role="status" aria-live="polite"></p>
+
+                    <a href="#" id="pdfToWordDownload"
+                       class="download-button" hidden>
+                        Download Word File
+                    </a>
+
+                </div>
+
+
+                <!-- IMAGE FORMAT CONVERTER -->
+                <div class="converter-card">
+
+                    <h3>Image Converter</h3>
+
+                    <p>Convert an image into another supported format.</p>
+
+                    <input
+                        type="file"
+                        id="imageConvertFile"
+                        accept="image/*"
+                    >
+
+                    <label for="imageConvertFormat">
+                        Output format
+                    </label>
+
+                    <select id="imageConvertFormat">
+                        <option value="image/jpeg">JPG</option>
+                        <option value="image/png">PNG</option>
+                        <option value="image/webp">WebP</option>
+                    </select>
+
+                    <button id="imageConvertButton" type="button">
+                        Convert Image
+                    </button>
+
+                    <p class="status-message" id="imageConvertStatus"
+                       role="status" aria-live="polite"></p>
+
+                    <a href="#" id="imageConvertDownload"
+                       class="download-button" hidden>
+                        Download Image
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; width:100%; box-sizing:border-box;">
+    <p class="footer-tagline">Your files. Under your control.</p>
+
+
+<p class="footer-contact">
+    Need help or have a question?
+    <a href="mailto:sicheron24x7@gmail.com">Contact Sicheron Support</a>
+</p>
+
+<p class="footer-copyright">
+    &copy; 2026 Sicheron. All rights reserved.
+</p>
+
+
+</footer>
+
+
+
+
+
+    <!-- LIBRARIES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <script src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
